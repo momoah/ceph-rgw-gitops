@@ -1,0 +1,14 @@
+apiVersion: ceph.rook.io/v1
+kind: CephObjectStoreUser
+metadata:
+  name: testuser
+  namespace: openshift-storage
+  labels:
+    managed-by: gitops
+spec:
+  store: external-store
+  displayName: "Test User with 2GB Quota"
+  quotas:
+    maxSize: 3Gi
+    maxObjects: -1
+    maxBuckets: 10

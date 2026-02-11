@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ceph-rgw-developer
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://gitlab.local.momolab.io/momo/ceph-rgw-gitops.git
+    targetRevision: main
+    path: namespaces/developer
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: developer
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=false

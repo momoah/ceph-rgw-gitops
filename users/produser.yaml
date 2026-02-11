@@ -1,0 +1,14 @@
+apiVersion: ceph.rook.io/v1
+kind: CephObjectStoreUser
+metadata:
+  name: produser
+  namespace: openshift-storage
+  labels:
+    managed-by: gitops
+spec:
+  store: external-store
+  displayName: "Production User with 5GB Quota"
+  quotas:
+    maxSize: 5Gi
+    maxObjects: -1
+    maxBuckets: 50

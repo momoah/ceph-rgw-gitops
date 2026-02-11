@@ -1,0 +1,15 @@
+apiVersion: ceph.rook.io/v1
+kind: CephObjectStoreUser
+metadata:
+  name: devuser
+  namespace: openshift-storage
+  labels:
+    managed-by: gitops
+spec:
+  store: external-store
+  displayName: "Dev User with 2GB Quota"
+  quotas:
+    maxSize: 2Gi
+    maxObjects: -1
+    maxBuckets: 10
+
