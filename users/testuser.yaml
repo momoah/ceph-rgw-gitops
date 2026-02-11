@@ -7,8 +7,8 @@ metadata:
     managed-by: gitops
 spec:
   store: external-store
-  displayName: "Test User with 2GB Quota"
+  displayName: "Test User with 500MB Quota"
   quotas:
-    maxSize: 3Gi
+    maxSize: 500Mi
     maxObjects: -1
     maxBuckets: 10
