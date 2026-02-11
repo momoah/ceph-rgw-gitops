@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://gitlab.local.momolab.io/momo/ceph-rgw-gitops.git
+    repoURL: https://github.com/momoah/ceph-rgw-gitops.git
     targetRevision: main
     path: namespaces/developer
   destination:
